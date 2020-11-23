@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_sign"
+    app:startDestination="@id/introFragment">
+
+    <fragment
+        android:id="@+id/introFragment"
+        android:name="com.tr1984.navigationpractice.sign.IntroFragment"
+        android:label="fragment_intro"
+        tools:layout="@layout/fragment_intro" >
+        <action
+            android:id="@+id/action_introFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_introFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.tr1984.navigationpractice.sign.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" >
+        <action
+            android:id="@+id/action_signInFragment_to_signCompleteFragment"
+            app:destination="@id/signCompleteFragment" />
+        <argument
+            android:name="userId"
+            app:argType="string"
+            android:defaultValue="unknown" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.tr1984.navigationpractice.sign.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_signCompleteFragment"
+            app:destination="@id/signCompleteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signCompleteFragment"
+        android:name="com.tr1984.navigationpractice.sign.SignCompleteFragment"
+        android:label="fragment_sign_complete"
+        tools:layout="@layout/fragment_sign_complete" >
+        <argument
+            android:name="userId"
+            app:argType="string"
+            android:defaultValue="unknown" />
+        <action
+            android:id="@+id/action_signCompleteFragment_to_nav_display"
+            app:destination="@id/nav_display"
+            app:popUpTo="@id/introFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <include app:graph="@navigation/nav_main" />
+</navigation>
