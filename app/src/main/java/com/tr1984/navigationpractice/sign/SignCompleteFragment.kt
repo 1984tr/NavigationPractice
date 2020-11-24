@@ -6,24 +6,25 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import com.tr1984.navigationpractice.R
+import androidx.navigation.fragment.navArgs
 import com.tr1984.navigationpractice.databinding.FragmentSignCompleteBinding
 
 class SignCompleteFragment : Fragment() {
 
+    private val args: SignCompleteFragmentArgs by navArgs()
+
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
-        requireActivity().onBackPressedDispatcher.addCallback { navigateToDisplay() }
+        requireActivity().onBackPressedDispatcher.addCallback { navigateToMain() }
         return FragmentSignCompleteBinding.inflate(inflater).apply {
-            userId.text = arguments?.getString("userId") ?: "unknown"
-            welcome.setOnClickListener { navigateToDisplay() }
+            userId.text = args.userId
+            welcome.setOnClickListener { navigateToMain() }
         }.root
     }
 
-    private fun navigateToDisplay() {
-        findNavController().navigate(R.id.action_signCompleteFragment_to_nav_display)
+    private fun navigateToMain() {
+        activity?.finish()
     }
 }

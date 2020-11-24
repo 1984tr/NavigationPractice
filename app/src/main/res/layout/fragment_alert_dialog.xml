@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -10,14 +10,13 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".sign.SignCompleteFragment">
+        tools:context=".main.AlertDialogFragment">
 
         <TextView
             android:id="@+id/label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="SignCompleteFragment"
+            android:text="AlertDialogFragment"
             android:textSize="36sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -25,7 +24,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/user_id"
+            android:id="@+id/message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -33,19 +32,19 @@
             app:layout_constraintEnd_toEndOf="@id/label"
             app:layout_constraintStart_toStartOf="@id/label"
             app:layout_constraintTop_toBottomOf="@id/label"
-            tools:text="User id" />
+            tools:text="message" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/welcome"
+            android:id="@+id/close"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Welcome"
+            android:layout_margin="36dp"
+            android:text="Close"
             android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="@id/user_id"
+            app:layout_constraintEnd_toEndOf="@id/message"
             app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="@id/user_id"
-            app:layout_constraintTop_toBottomOf="@id/user_id" />
+            app:layout_constraintStart_toStartOf="@id/message"
+            app:layout_constraintTop_toBottomOf="@id/message" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -10,42 +10,44 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".sign.SignCompleteFragment">
+        tools:context=".main.IntentFragment">
 
         <TextView
             android:id="@+id/label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="SignCompleteFragment"
+            android:text="Intent"
             android:textSize="36sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/explicit"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/user_id"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/explicit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:text="Explicit"
             android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@id/implicit"
             app:layout_constraintEnd_toEndOf="@id/label"
             app:layout_constraintStart_toStartOf="@id/label"
             app:layout_constraintTop_toBottomOf="@id/label"
-            tools:text="User id" />
+            app:layout_constraintVertical_chainStyle="packed" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/welcome"
+            android:id="@+id/implicit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Welcome"
+            android:text="Implicit"
             android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="@id/user_id"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="@id/user_id"
-            app:layout_constraintTop_toBottomOf="@id/user_id" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/explicit"
+            app:layout_constraintStart_toStartOf="@id/explicit"
+            app:layout_constraintTop_toBottomOf="@id/explicit" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
