@@ -37,6 +37,7 @@
         tools:layout="@layout/fragment_intent" />
     <dialog
         android:id="@+id/alertDialogFragment"
+        tools:layout="@layout/fragment_alert_dialog"
         android:name="com.tr1984.navigationpractice.main.AlertDialogFragment"
         android:label="AlertDialogFragment">
         <argument
@@ -46,6 +47,7 @@
     </dialog>
     <dialog
         android:id="@+id/confirmDialogFragment"
+        tools:layout="@layout/fragment_confirm_dialog"
         android:name="com.tr1984.navigationpractice.main.ConfirmDialogFragment"
         android:label="ConfirmDialogFragment">
         <argument
